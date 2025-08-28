@@ -1,0 +1,60 @@
+@import '../../utils/style/variables';
+@import '../../utils/style/mixins';
+
+.header {
+  &_container {
+    @include flex-between(row);
+    padding: 40px 6%;
+
+    .logo {
+      height: 70px;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+
+      &__link {
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 142.6%;
+        text-decoration: none;
+
+        &:focus {
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    &_container {
+      padding: 20px;
+    }
+
+    .logo {
+      height: 45px;
+    }
+
+    .navbar__link {
+      font-size: 14px;
+    }
+  }
+
+  @include respond-to(mobile) {
+    &_container {
+      padding: 10px;
+    }
+
+    .logo {
+      width: 70%;
+      height: auto;
+    }
+
+    .navbar__link {
+      font-size: 12px;
+    }
+  }
+}

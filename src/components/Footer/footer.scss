@@ -1,0 +1,29 @@
+@import '../../utils/style/variables';
+@import '../../utils/style/mixins';
+
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+
+  &_logo {
+    margin-top: 66px;
+  }
+
+  &_info {
+    font-size: 24px;
+    line-height: 142.6%;
+    margin-bottom: 30px;
+  }
+
+  @include respond-to(tablet) {
+    &_info {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+// Import de mes variables et mixins globaux
+@import './variables';
+@import './mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  font-weight: 500;
+  background-color: $white;
+  color: $black;
+}
+
+.App {
+  margin: 0;
+}

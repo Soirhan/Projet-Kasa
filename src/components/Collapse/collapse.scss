@@ -1,0 +1,40 @@
+@import '../../utils/style/variables';
+@import '../../utils/style/mixins';
+
+.collapse_item {
+  width: 100%;
+  margin-top: 20px;
+
+  .collapse_header {
+    @include button-primary; // bouton rouge défini dans mixins
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+
+    .collapse_icon {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .collapse_content {
+    background-color: $light-gray;
+    border-radius: 0 0 $border-radius-small $border-radius-small;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.4;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+}

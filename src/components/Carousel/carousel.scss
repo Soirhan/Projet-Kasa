@@ -1,0 +1,43 @@
+@import '../../utils/style/variables';
+@import '../../utils/style/mixins';
+
+.carousel {
+  position: relative;
+  margin-bottom: 35px;
+
+  &_container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 415px;
+    border-radius: $border-radius-large;
+
+    .carousel__img {
+      @include image-responsive($border-radius-large);
+    }
+  }
+
+  &_controls {
+    display: flex;
+    align-items: center;
+  }
+
+  &__chevron-left,
+  &__chevron-right {
+    width: 30px;
+    height: auto;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &__chevron-left { left: 24px; }
+  &__chevron-right { right: 24px; }
+
+  &_index {
+    position: absolute;
+    left: 49%;
+    font-size: 18px;
+    bottom: 24px;
+    color: $white;
+  }
+}

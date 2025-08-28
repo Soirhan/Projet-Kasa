@@ -1,0 +1,84 @@
+// ===========================
+// MIXINS GLOBAUX
+// ===========================
+
+// ✅ Responsive classique
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// ✅ Variante (certains fichiers utilisent respond-to au lieu de respond)
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// ✅ Image responsive (Carousel)
+@mixin image-responsive($radius: 10px) {
+  width: 100%;
+  height: auto;
+  border-radius: $radius;
+  object-fit: cover;
+  display: block;
+}
+
+// ✅ Collapse section
+@mixin collapse-section {
+  background-color: $light-gray;
+  border-radius: $border-radius-small;
+  padding: 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+// ✅ Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ✅ Flex between (Header)
+@mixin flex-between($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ✅ Bouton principal (Collapse)
+@mixin button-primary {
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-small;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  @include transition();
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+// ✅ Transition (utilisé dans button-primary)
+@mixin transition($time: 0.3s, $ease: ease-in-out) {
+  transition: all $time $ease;
+}

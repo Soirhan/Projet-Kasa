@@ -1,0 +1,13 @@
+@import '../../utils/style/variables';
+@import '../../utils/style/mixins';
+
+.loader_wrapper {
+  animation: rotate 1s infinite linear;
+  border: 10px solid $primary-color;
+  border-bottom-color: transparent;
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  margin: 0 auto 30%;
+  text-align: center;
+}
