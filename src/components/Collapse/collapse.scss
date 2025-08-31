@@ -6,7 +6,7 @@
   margin-top: 20px;
 
   .collapse_header {
-    @include button-primary; // bouton rouge défini dans mixins
+    @include button-primary;
     width: 100%;
     text-align: left;
     display: flex;
@@ -14,17 +14,19 @@
     align-items: center;
     font-size: 18px;
     font-weight: 500;
+    cursor: default; // plus de pointer sur toute la barre
 
     .collapse_icon {
       font-size: 20px;
       transition: transform 0.3s ease;
+      cursor: pointer; //  pointer uniquement sur l’icône
 
       &.open {
         transform: rotate(180deg);
       }
     }
   }
-
+  // Block text une fois cliqué
   .collapse_content {
     background-color: $light-gray;
     border-radius: 0 0 $border-radius-small $border-radius-small;
@@ -33,8 +35,14 @@
     line-height: 1.4;
     display: none;
 
+
     &.open {
       display: block;
     }
+    // suppression des puces
+    ul{
+      list-style: none;
+    }
   }
 }
+

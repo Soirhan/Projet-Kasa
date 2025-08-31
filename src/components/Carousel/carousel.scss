@@ -1,43 +1,49 @@
 @import '../../utils/style/variables';
 @import '../../utils/style/mixins';
 
-.carousel {
+.carousel_container {
   position: relative;
-  margin-bottom: 35px;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
 
-  &_container {
-    display: flex;
-    transition: transform 0.5s ease;
+  .carousel_img {
     width: 100%;
-    height: 415px;
-    border-radius: $border-radius-large;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-    .carousel__img {
-      @include image-responsive($border-radius-large);
+  .carousel_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+
+    &.left {
+      left: 10px;
+    }
+    &.right {
+      right: 10px;
     }
   }
 
-  &_controls {
-    display: flex;
-    align-items: center;
-  }
-
-  &__chevron-left,
-  &__chevron-right {
-    width: 30px;
-    height: auto;
+  .carousel_counter {
     position: absolute;
-    cursor: pointer;
-  }
-
-  &__chevron-left { left: 24px; }
-  &__chevron-right { right: 24px; }
-
-  &_index {
-    position: absolute;
-    left: 49%;
-    font-size: 18px;
-    bottom: 24px;
-    color: $white;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    color: white;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
   }
 }
+

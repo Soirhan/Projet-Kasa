@@ -1,4 +1,3 @@
-// src/components/Collapse/collapse.jsx
 import React, { useState } from "react";
 import './collapse.scss';
 
@@ -9,10 +8,16 @@ export default function Collapse({ title, children }) {
 
   return (
     <div className="collapse_item">
-      <button className="collapse_header" onClick={toggleCollapse}>
-        {title}
-        <span className={`collapse_icon ${isOpen ? "open" : ""}`}>▼</span>
-      </button>
+      <div className="collapse_header">
+        <span>{title}</span>
+        {/* onClick uniquement sur l'icône */}
+        <span 
+          className={`collapse_icon ${isOpen ? "open" : ""}`} 
+          onClick={toggleCollapse}
+        >
+          ▼
+        </span>
+      </div>
       <div className={`collapse_content ${isOpen ? "open" : ""}`}>
         {children}
       </div>

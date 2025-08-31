@@ -1,50 +1,36 @@
-import { useState} from 'react'
-import nextIcon from '../../assets/chevronDroit.png'
-import previousIcon from '../../assets/chevronGauche.png'
-import './carousel.scss'
+import React, { useState } from "react";
+import './carousel.scss';
 
-export default function Carousel ({img}){
-  
-    const numberPicture = img.length
-    const firstPicture = img[0]
-    const lastPicture = img[numberPicture-1]
-    const [pictureActual, setPictureActual ] = useState(firstPicture)
-    const pictureIndex = img.indexOf(pictureActual)
-    
-    const next = () => {
-        if(pictureActual === lastPicture){
-            setPictureActual(firstPicture)
-        } else {
-            
-            setPictureActual(img[pictureIndex+1])
-        }
-    }
+export default function Carousel({ img }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const total = img.length;
 
-    const previous = () => {
-        if(pictureActual === firstPicture){
-            setPictureActual(lastPicture)
-        } else {
-            
-            setPictureActual(img[pictureIndex-1])
-        }
-    }
+  const prevSlide = () => {
+    setCurrentIndex(currentIndex === 0 ? total - 1 : currentIndex - 1);
+  };
 
-    return (
-        <div className="carousel">
-            <div className="carousel_container" >
-            <img src={pictureActual}  alt={pictureActual.title} className="carousel_img" />
-            </div>
-            {numberPicture !== 1 &&
-            <div className='carousel_controls'>
-                <img src={previousIcon} className='chevronLeft' alt="previous" onClick={() => previous(pictureActual)} />
-                <img src={nextIcon} className='chevronRight' alt="next" onClick={() => next(pictureActual)}/>
-                <div className='carousel_Index'>{img.indexOf(pictureActual)+1} / {numberPicture}</div>
+  const nextSlide = () => {
+    setCurrentIndex(currentIndex === total - 1 ? 0 : currentIndex + 1);
+  };
 
-            </div>}
+  if (total === 0) return null;
+
+  return (
+    <div className="carousel_container">
+      <img src={img[currentIndex]} alt={`Slide ${currentIndex}`} className="carousel_img" />
+
+      {total > 1 && (
+        <>
+          <button className="carousel_arrow left" onClick={prevSlide}>‹</button>
+          <button className="carousel_arrow right" onClick={nextSlide}>›</button>
+        </>
+      )}
+
+      {total > 1 && (
+        <div className="carousel_counter">
+          {currentIndex + 1} / {total}
         </div>
-    );}
-
-
-    
-
-
+      )}
+    </div>
+  );
+}
