@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import './collapse.scss';
+import arrowIcon from '../../assets/ChevronOpen.png'; // flèche personnalisée
 
 export default function Collapse({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleCollapse = () => setIsOpen(!isOpen);
 
   return (
     <div className="collapse_item">
       <div className="collapse_header">
         <span>{title}</span>
-        {/* onClick uniquement sur l'icône */}
-        <span 
-          className={`collapse_icon ${isOpen ? "open" : ""}`} 
+        <img
+          src={arrowIcon}
+          alt="Déplier"
+          className={`collapse_icon ${isOpen ? "open" : ""}`}
           onClick={toggleCollapse}
-        >
-          ▼
-        </span>
+        />
       </div>
       <div className={`collapse_content ${isOpen ? "open" : ""}`}>
         {children}

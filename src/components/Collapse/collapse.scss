@@ -14,19 +14,20 @@
     align-items: center;
     font-size: 18px;
     font-weight: 500;
-    cursor: default; // plus de pointer sur toute la barre
+    cursor: default; // le curseur ne s'applique qu'à la flèche
 
     .collapse_icon {
-      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
       transition: transform 0.3s ease;
-      cursor: pointer; //  pointer uniquement sur l’icône
 
       &.open {
-        transform: rotate(180deg);
+        transform: rotate(180deg); // rotation lors de l'ouverture
       }
     }
   }
-  // Block text une fois cliqué
+
   .collapse_content {
     background-color: $light-gray;
     border-radius: 0 0 $border-radius-small $border-radius-small;
@@ -35,14 +36,18 @@
     line-height: 1.4;
     display: none;
 
-
     &.open {
       display: block;
     }
-    // suppression des puces
-    ul{
-      list-style: none;
+
+    ul {
+      list-style: none; // supprime les puces
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 5px; // espace entre les items
     }
   }
 }
-
