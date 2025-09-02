@@ -13,11 +13,11 @@ return (
       <img className='logo' src={logo} alt="logo kasa"/>
     </Link>
     <nav className='navbar'>
-      <div className="navli">
+      <div className="navbar__link">
             <Link className="nav" to="/">Accueil</Link>
           </div>
-      <div className="navli">
-            <Link className="nav" to="/about">À propos</Link>
+      <div className="navbar__link">
+            <Link className="nav" to="/about">À Propos</Link>
           </div>    
     </nav>
   </header>
