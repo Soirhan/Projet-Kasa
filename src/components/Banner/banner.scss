@@ -1,0 +1,43 @@
+@import "../../utils/style/variables";
+@import "../../utils/style/mixins";
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: $border-radius-large;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(60%); // effet sombre pour lisibilité du texte
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-align: center;
+    width: 90%;
+  }
+}
+
+// Mobile
+@include respond-to(mobile) {
+  .banner {
+    height: 120px;
+
+    &__text {
+      font-size: 1.2rem;
+      padding: 0 10px;
+    }
+  }
+}

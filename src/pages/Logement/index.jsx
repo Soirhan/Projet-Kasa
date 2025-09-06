@@ -42,7 +42,7 @@ function Logement() {
           </div>
         </div>
 
-        <div className='collapse_container' style={{ display: 'flex', gap: '200px' }}>
+        <div className='collapse_container'>
           <Collapse title="Description">
             <p>{logement.description}</p>
           </Collapse>

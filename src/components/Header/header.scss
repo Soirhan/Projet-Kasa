@@ -12,7 +12,7 @@
 
     .navbar {
       display: flex;
-      gap: 50px;
+      gap: 40px;
       align-items: center;
 
       &__link {
@@ -36,32 +36,25 @@
     }
   }
 
-  @include respond-to(tablet) {
-    &_container {
-      padding: 20px;
-    }
-
-    .logo {
-      height: 45px;
-    }
-
-    .navbar__link {
-      font-size: 10px;
-    }
-  }
 
   @include respond-to(mobile) {
-    &_container {
-      padding: 10px;
-    }
-
-    .logo {
-      width: 70%;
-      height: auto;
-    }
-
-    .navbar__link {
-      font-size: 12px;
-    }
+  .header_container {
+    padding: 10px;
   }
+
+  .logo {
+    width: 70%;
+    height: auto;
+  }
+
+  .navbar {
+    gap: 8px; // espace réduit
+  }
+
+  .navbar__link {
+    font-size: 14px; // texte réduit mais lisible
+    white-space: nowrap; // évite le retour à la ligne
+  }
+}
+
 }
