@@ -6,20 +6,23 @@ import { useParams, Navigate } from 'react-router-dom';
 import Collapse from '../../components/Collapse/collapse';
 
 function Logement() {
-  const data = require("../../logements.json");
-  const { logementId } = useParams();
+  const data = require("../../logements.json"); // données des logements
+  const { logementId } = useParams(); // récupère l'id dans l'URL
 
-  const logement = data.find(item => item.id === logementId);
+  const logement = data.find(item => item.id === logementId); // recherche du logement
 
+  // si l'id n'existe pas → redirection vers /error
   if (!logement) return <Navigate replace to="/error" />;
 
   return (
     <main className='main_location'>
       <section>
+        {/* Carrousel d'images */}
         <div className='carousel_location'>
           <Carousel img={logement.pictures} />
         </div>
 
+        {/* Infos logement */}
         <div className='location'>
           <div className='location_header'>
             <h2 className='location_header_title'>{logement.title}</h2>
@@ -31,6 +34,7 @@ function Logement() {
             </ul>
           </div>
 
+          {/* Infos hôte + note */}
           <div className='location_host'>
             <div className='location_host_info'>
               <div className='host_name'>{logement.host.name}</div>
@@ -42,6 +46,7 @@ function Logement() {
           </div>
         </div>
 
+        {/* Description + équipements */}
         <div className='collapse_container'>
           <Collapse title="Description">
             <p>{logement.description}</p>

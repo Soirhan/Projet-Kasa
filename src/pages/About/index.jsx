@@ -6,10 +6,12 @@ import './about.scss';
 function About() {
   return (
     <main className='main_about'>
+      {/* Bannière de la page À propos */}
       <article className='banner'>
         <img className='banner_img' src={BannerAbout} alt="paysage montagne" />
       </article>
 
+      {/* Sections déroulantes (Collapse) pour les valeurs de Kasa */}
       <section className='section_about'>
         <div className='collapse_about_container'>
           <Collapse title="Fiabilité">

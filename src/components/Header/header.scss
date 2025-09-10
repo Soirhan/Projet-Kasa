@@ -15,46 +15,66 @@
       gap: 40px;
       align-items: center;
 
-      &__link {
-        color: black;       
+      .navbar__link .nav {
+        color: black;                // texte noir
+        text-decoration: none;        // enlève le soulignement
         font-weight: 500;
-        font-size: 24px;
-        line-height: 142.6%;
-        text-decoration: none; 
+        font-size:26px;
 
         &:hover,
         &:focus,
         &:active {
-          color: black;          
+          color: black;              
+          text-decoration: none;      // pas de soulignement au hover non plus
         }
       }
 
-      a.nav {
-          text-decoration: none;
-          color: black;
-        }
     }
   }
 
+  // ======= Tablette =======
+  @include respond-to(tablet) {
+    &_container {
+      padding: 20px 4%;
 
+      .logo {
+        width: 150px;
+        height: 70px;
+      }
+
+      .navbar {
+        gap: 60px;
+
+        .navbar__link .nav {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  // ======= Mobile =======
   @include respond-to(mobile) {
-  .header_container {
-    padding: 10px;
-  }
+    &_container {
+      width: 98%;
+      margin: 0 auto;
 
-  .logo {
-    width: 70%;
-    height: auto;
-  }
+      .logo {
+        width: 115px;
+        height: auto;
+      }
 
-  .navbar {
-    gap: 8px; // espace réduit
-  }
+      .navbar {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        align-items: center;
 
-  .navbar__link {
-    font-size: 14px; // texte réduit mais lisible
-    white-space: nowrap; // évite le retour à la ligne
+        .navbar__link .nav {
+          font-size: 18px;
+          white-space: nowrap;
+          text-align: center;
+        }
+      }
+    }
   }
-}
-
 }

@@ -2,19 +2,19 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="Kasa"
-      content="Site de location immobilière"
-    />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <meta name="Kasa" content="Site de location immobilière" />
     <title>Kasa</title>
+    <!-- Favicon avec l'image Logo.png -->
+    <link rel="icon" href="%PUBLIC_URL%/Logo.png" type="image/png" />
+    <!-- Icône pour iOS -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   </head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <noscript>JavaScript doit être activé pour utiliser l'app.</noscript> <!-- Message si JS désactivé -->
+    <div id="root"></div> <!-- Conteneur principal pour React -->
   </body>
 </html>

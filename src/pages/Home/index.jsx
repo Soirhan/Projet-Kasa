@@ -8,10 +8,10 @@ import "./Home.scss";
 function Home() {
   return (
     <main className="main_home">
-      {/* Bannière */}
+      {/* Bannière d’accueil */}
       <Banner image={HomeBanner} text="Chez vous, partout et ailleurs" />
 
-      {/* Grille de cards */}
+      {/* Liste des logements sous forme de cartes */}
       <section className="home_cards">
         {logements.map((logement) => (
           <Card key={logement.id} logement={logement} />

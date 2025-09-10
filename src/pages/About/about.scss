@@ -52,13 +52,17 @@
     }
   }
 
-  @include respond(mobile) {
-    margin: 15px;
-    width: 83%;
-    padding: 0 10px;
-
-    .section_about {
-      gap: 20px;
+  @include respond-to(mobile) {
+    .main_home, .main_location, .main_about {
+      width: 100%;
+      max-width: 98%;      // presque toute la largeur
+      margin: 0 auto;      // centre horizontalement
+      padding: 0 10px;     // petite marge sur les côtés
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
+
+
 }

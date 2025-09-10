@@ -2,7 +2,7 @@
 // MIXINS GLOBAUX
 // ===========================
 
-// ✅ Responsive classique
+//  Responsive classique
 @mixin respond($breakpoint) {
   @if $breakpoint == tablet {
     @media (max-width: 1024px) {
@@ -15,7 +15,7 @@
   }
 }
 
-// ✅ Variante (certains fichiers utilisent respond-to au lieu de respond)
+//  Variante (certains fichiers utilisent respond-to au lieu de respond)
 @mixin respond-to($breakpoint) {
   @if $breakpoint == tablet {
     @media (max-width: 1024px) {
@@ -28,7 +28,7 @@
   }
 }
 
-// ✅ Image responsive (Carousel)
+//  Image responsive (Carousel)
 @mixin image-responsive($radius: 10px) {
   width: 100%;
   height: auto;
@@ -37,7 +37,7 @@
   display: block;
 }
 
-// ✅ Collapse section
+//  Collapse section
 @mixin collapse-section {
   background-color: $light-gray;
   border-radius: $border-radius-small;
@@ -46,14 +46,14 @@
   overflow: hidden;
 }
 
-// ✅ Flex center
+//  Flex center
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-// ✅ Flex between (Header)
+//  Flex between (Header)
 @mixin flex-between($direction: row) {
   display: flex;
   flex-direction: $direction;
@@ -61,7 +61,7 @@
   align-items: center;
 }
 
-// ✅ Bouton principal (Collapse)
+//  Bouton principal (Collapse)
 @mixin button-primary {
   background-color: $primary-color;
   color: $white;
